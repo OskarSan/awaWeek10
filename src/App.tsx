@@ -3,7 +3,7 @@ import Header from './components/Header'
 import MyContainer from './components/MyContainer'
 import About from './components/About'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import "./i18n";
 
 
 function App() {
