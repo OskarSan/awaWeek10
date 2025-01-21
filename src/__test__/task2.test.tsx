@@ -3,7 +3,7 @@ import About from "../components/About"; // Assuming About is a React component
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom"; // For extra matchers like .toBeInTheDocument
 import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n"; // Assuming i18n is set up in the i18n.ts or i18n.js file
+import i18n from "../i18n"; // Assuming i18n is set up in the i18n.ts or i18n.js file
 
 // Mocking react-router-dom's BrowserRouter
 jest.mock("react-router-dom", () => {
