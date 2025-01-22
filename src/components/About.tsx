@@ -13,6 +13,8 @@ interface Post {
 const About: React.FC = () => {
     
     const [data, setData] = useState<Post[] | null>(null);
+    const [visibleItems, setVisibleItems] = useState<number>(12);
+
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -23,14 +25,16 @@ const About: React.FC = () => {
 
     }, []);
     
-    
+    const showMoreItems = () => {
+        setVisibleItems(visibleItems + 12);
+    }
     
     return (
         <div>
             <div className="grid-container">
             {
                 data ? (
-                    data.map((post: Post) => (
+                    data.slice(0, visibleItems).map((post: Post) => (
                         <div key={post.id} className="grid-item">
                             <h3>{post.title}</h3>
                             <p>{post.body}</p>
@@ -40,6 +44,9 @@ const About: React.FC = () => {
                     <p>Loading...</p>
             )}
             </div>
+            {data && visibleItems < data.length && (
+                <button onClick={showMoreItems}>Show more</button>
+            )}
         </div>
     );
 }
