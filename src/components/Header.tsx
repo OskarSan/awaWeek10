@@ -21,8 +21,8 @@ const Header: React.FC = () => {
                 <ul>
                     <a href="/">{t("Home")}</a>
                     <a href="/about">{t("About")}</a>
-                    <button onClick={()=>changeLanguage("fi")}>FI</button>
-                    <button onClick={()=>changeLanguage("en")}>EN</button>
+                    <button onClick={()=>changeLanguage("fi")} id="fi">FI</button>
+                    <button onClick={()=>changeLanguage("en")} id="en">EN</button>
                 </ul>
             </nav>
         </header>
