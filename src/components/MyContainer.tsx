@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
+
+
 
 const MyContainer: React.FC = () => {
+
+
+    const {t, i18n} = useTranslation();
+    
     return (
         <div>
-            Hello, this is some random text!
+            {t("home page")}
         </div>
     );
 }
