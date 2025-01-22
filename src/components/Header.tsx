@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
 
     return (
-        <header id="header">
+        <header className = "header">
             <h1>
                 Title!!!
             </h1>
