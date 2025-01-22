@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import "../styles/About.css";
 
 interface Post {
     userId: number;
@@ -27,10 +27,11 @@ const About: React.FC = () => {
     
     return (
         <div>
+            <div className="grid-container">
             {
                 data ? (
                     data.map((post: Post) => (
-                        <div key={post.id}>
+                        <div key={post.id} className="grid-item">
                             <h3>{post.title}</h3>
                             <p>{post.body}</p>
                         </div>
@@ -38,6 +39,7 @@ const About: React.FC = () => {
                 ) : (
                     <p>Loading...</p>
             )}
+            </div>
         </div>
     );
 }
